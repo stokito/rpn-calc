@@ -34,7 +34,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>com.github.stokito.Main</mainClass>
+                            <mainClass>com.github.stokito.rpncalc.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,6 +1,6 @@
-package com.github.stokito;
+package com.github.stokito.rpncalc;
 
-import com.github.stokito.ops.Ops;
+import com.github.stokito.rpncalc.ops.Ops;
 
 import java.text.NumberFormat;
 import java.util.*;

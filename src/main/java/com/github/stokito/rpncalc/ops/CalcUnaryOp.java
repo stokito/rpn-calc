@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 import java.util.function.DoubleUnaryOperator;
 

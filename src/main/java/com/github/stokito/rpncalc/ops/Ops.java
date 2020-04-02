@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 import java.lang.invoke.LambdaMetafactory;
 import java.lang.invoke.MethodHandle;

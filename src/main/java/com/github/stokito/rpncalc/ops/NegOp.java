@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 public class NegOp implements CalcUnaryOp {
     public static final NegOp INSTANCE = new NegOp();

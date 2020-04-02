@@ -113,8 +113,8 @@ For example to calculate square root and negate it:
 
 ## Implementation
 
-The core of the calculator is `com.github.stokito.Calc` class which contains the values stack and performs all the calculations.
+The core of the calculator is `Calc` class which contains the values stack and performs all the calculations.
 The class designed in a JavaBeans style and have getters and setters so can be easily used with DI.
-The actual parsing and interaction with a user via the command line performed by the `com.github.stokito.StreamProcessor` class.
-You can extend the calc and add your custom operator by extending `com.github.stokito.ops.CalcUnaryOp` or `com.github.stokito.ops.CalcBinaryOp`. Then you'll need to add them into `com.github.stokito.ops.Ops.BASIC_OPS` list or this can be done with DI.
+The actual parsing and interaction with a user via the command line performed by the `StreamProcessor` class.
+You can extend the calc and add your custom operator by extending `CalcUnaryOp` or `CalcBinaryOp`. Then you'll need to add them into `Ops.BASIC_OPS` list or this can be done with DI.
 

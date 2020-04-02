@@ -1,4 +1,4 @@
-package com.github.stokito;
+package com.github.stokito.rpncalc;
 
 import java.io.InputStream;
 import java.io.PrintStream;

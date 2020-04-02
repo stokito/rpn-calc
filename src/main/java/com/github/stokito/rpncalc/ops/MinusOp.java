@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 public class MinusOp implements CalcBinaryOp {
     public static final MinusOp INSTANCE = new MinusOp();

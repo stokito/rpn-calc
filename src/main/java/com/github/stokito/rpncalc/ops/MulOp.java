@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 public class MulOp implements CalcBinaryOp {
     public static final MulOp INSTANCE = new MulOp();

@@ -1,4 +1,4 @@
-package com.github.stokito;
+package com.github.stokito.rpncalc;
 
 import org.junit.jupiter.api.Test;
 

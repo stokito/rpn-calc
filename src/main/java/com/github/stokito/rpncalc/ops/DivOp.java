@@ -1,4 +1,4 @@
-package com.github.stokito.ops;
+package com.github.stokito.rpncalc.ops;
 
 public class DivOp implements CalcBinaryOp {
     public static final DivOp INSTANCE = new DivOp();
