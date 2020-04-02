@@ -1,5 +1,6 @@
 # CLI RPN Calculator
 The command-line [Reverse Polish Notation (RPN)](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator.
+Was developed as a [test task](https://gist.github.com/joedean/078a62b9ec03b38dfc519b3a5f168b07).
 
 ## Specifications
 
