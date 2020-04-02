@@ -118,3 +118,6 @@ The class designed in a JavaBeans style and have getters and setters so can be e
 The actual parsing and interaction with a user via the command line performed by the `StreamProcessor` class.
 You can extend the calc and add your custom operator by extending `CalcUnaryOp` or `CalcBinaryOp`. Then you'll need to add them into `Ops.BASIC_OPS` list or this can be done with DI.
 
+Internally the calculator uses a `double` type so all the calculations have the same issues as IEEE-754 float numbers have.
+
+ 
