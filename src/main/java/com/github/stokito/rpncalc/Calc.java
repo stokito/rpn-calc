@@ -1,5 +1,6 @@
 package com.github.stokito.rpncalc;
 
+import com.github.stokito.rpncalc.ops.CalcOp;
 import com.github.stokito.rpncalc.ops.Ops;
 
 import java.text.NumberFormat;
@@ -9,6 +10,8 @@ import java.util.function.DoubleUnaryOperator;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.addAll;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toMap;
 
 public class Calc {
     /** Operators: [Name, Func]. Can be injected with DI */
@@ -71,6 +74,11 @@ public class Calc {
 
     public void setOps(Map<String, Object> ops) {
         this.ops = ops;
+    }
+
+    public void setBasicOps(List<CalcOp> ops) {
+        Map<String, Object> basicOpsMap = ops.stream().collect(toMap(CalcOp::getOp, identity()));
+        setOps(basicOpsMap);
     }
 
     public Map<String, Object> getOps() {
