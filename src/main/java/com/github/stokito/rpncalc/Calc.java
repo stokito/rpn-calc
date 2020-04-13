@@ -27,26 +27,20 @@ public class Calc {
             Object func = ops.get(token);
             if (func != null) {
                 if (func instanceof DoubleUnaryOperator) {
-                    if (values.size() < 1) {
-                        throw new Exception("Not enough operands");
-                    }
+                    isEnougthOperands(1);
                     double num = values.pop();
                     DoubleUnaryOperator operator = (DoubleUnaryOperator) func;
                     double result = operator.applyAsDouble(num);
                     values.push(result);
                 } else if (func instanceof DoubleBinaryOperator) {
-                    if (values.size() < 2) {
-                        throw new Exception("Not enough operands");
-                    }
+                    isEnougthOperands(2);
                     double right = values.pop();
                     double left = values.pop();
                     DoubleBinaryOperator operator = (DoubleBinaryOperator) func;
                     double result = operator.applyAsDouble(left, right);
                     values.push(result);
                 } else if (func instanceof PyOp) {
-                    if (values.size() < 3) {
-                        throw new Exception("Not enough operands");
-                    }
+                    isEnougthOperands(3);
                     double val3 = values.pop();
                     double val2 = values.pop();
                     double val1 = values.pop();
@@ -63,6 +57,12 @@ public class Calc {
 
         Double result = values.peek();
         return result;
+    }
+
+    private void isEnougthOperands(int operandsCount) throws Exception {
+        if (values.size() < operandsCount) {
+            throw new Exception("Not enough operands");
+        }
     }
 
     private List<String> splitExpression(String op) {
