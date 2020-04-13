@@ -23,7 +23,8 @@ public class Ops {
             MinusOp.INSTANCE,
             MulOp.INSTANCE,
             DivOp.INSTANCE,
-            NegOp.INSTANCE
+            NegOp.INSTANCE,
+            PyOp.INSTANCE
     );
 
     static {

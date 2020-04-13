@@ -8,6 +8,10 @@ Was developed as a [test task](https://gist.github.com/joedean/078a62b9ec03b38df
 * It should implement the four standard arithmetic operators
 * The calculator should handle errors and recover gracefully
 * The calculator should exit when it receives a `q` command or an end of input indicator (`EOF` / `Ctrl+D`)
+ 
+`py` op
+1. A^2 + B^2 = C^2
+5 12 13 = true
 
 ## Build and run
 You need a JDK 13 or later and Maven. To build run `mvn clean package`.

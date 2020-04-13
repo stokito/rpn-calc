@@ -2,6 +2,7 @@ package com.github.stokito.rpncalc;
 
 import com.github.stokito.rpncalc.ops.CalcOp;
 import com.github.stokito.rpncalc.ops.Ops;
+import com.github.stokito.rpncalc.ops.PyOp;
 
 import java.text.NumberFormat;
 import java.util.*;
@@ -33,8 +34,7 @@ public class Calc {
                     DoubleUnaryOperator operator = (DoubleUnaryOperator) func;
                     double result = operator.applyAsDouble(num);
                     values.push(result);
-                } else {
-                    assert func instanceof DoubleBinaryOperator;
+                } else if (func instanceof DoubleBinaryOperator) {
                     if (values.size() < 2) {
                         throw new Exception("Not enough operands");
                     }
@@ -42,6 +42,16 @@ public class Calc {
                     double left = values.pop();
                     DoubleBinaryOperator operator = (DoubleBinaryOperator) func;
                     double result = operator.applyAsDouble(left, right);
+                    values.push(result);
+                } else if (func instanceof PyOp) {
+                    if (values.size() < 3) {
+                        throw new Exception("Not enough operands");
+                    }
+                    double val3 = values.pop();
+                    double val2 = values.pop();
+                    double val1 = values.pop();
+                    PyOp operator = (PyOp) func;
+                    double result = operator.apply(val1, val2, val3);
                     values.push(result);
                 }
             } else {
