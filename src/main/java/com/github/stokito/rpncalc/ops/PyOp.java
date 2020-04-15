@@ -1,5 +1,6 @@
 package com.github.stokito.rpncalc.ops;
 
+/** Pythagorean theorem */
 public class PyOp implements CalcOp {
     public static final CalcOp INSTANCE = new PyOp();
 
