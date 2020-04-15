@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class Calc {
     /** Operators: [Name, Func]. Can be injected with DI */
-    private Map<String, Object> ops = Ops.OPS;
+    private Map<String, CalcOp> ops = Ops.OPS;
     private NumberFormat formatter = NumberFormat.getInstance();
     private final Deque<Double> values = new ArrayDeque<>();
 
@@ -80,16 +80,16 @@ public class Calc {
         return values;
     }
 
-    public void setOps(Map<String, Object> ops) {
+    public void setOps(Map<String, CalcOp> ops) {
         this.ops = ops;
     }
 
     public void setBasicOps(List<CalcOp> ops) {
-        Map<String, Object> basicOpsMap = ops.stream().collect(toMap(CalcOp::getOp, identity()));
+        Map<String, CalcOp> basicOpsMap = ops.stream().collect(toMap(CalcOp::getOp, identity()));
         setOps(basicOpsMap);
     }
 
-    public Map<String, Object> getOps() {
+    public Map<String, CalcOp> getOps() {
         return ops;
     }
 
