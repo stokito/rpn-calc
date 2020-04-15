@@ -1,8 +1,6 @@
 package com.github.stokito.rpncalc;
 
-import com.github.stokito.rpncalc.ops.CalcOp;
-import com.github.stokito.rpncalc.ops.Ops;
-import com.github.stokito.rpncalc.ops.PyOp;
+import com.github.stokito.rpncalc.ops.*;
 
 import java.text.NumberFormat;
 import java.util.*;
@@ -26,25 +24,25 @@ public class Calc {
         for (String token : input) {
             Object func = ops.get(token);
             if (func != null) {
-                if (func instanceof DoubleUnaryOperator) {
-                    isEnoughOperands(1);
+                if (func instanceof CalcUnaryOp) {
+                    CalcUnaryOp operator = (CalcUnaryOp) func;
+                    isEnoughOperands(operator.getOperandsCount());
                     double num = values.pop();
-                    DoubleUnaryOperator operator = (DoubleUnaryOperator) func;
                     double result = operator.applyAsDouble(num);
                     values.push(result);
-                } else if (func instanceof DoubleBinaryOperator) {
-                    isEnoughOperands(2);
+                } else if (func instanceof CalcBinaryOp) {
+                    CalcBinaryOp operator = (CalcBinaryOp) func;
+                    isEnoughOperands(operator.getOperandsCount());
                     double right = values.pop();
                     double left = values.pop();
-                    DoubleBinaryOperator operator = (DoubleBinaryOperator) func;
                     double result = operator.applyAsDouble(left, right);
                     values.push(result);
                 } else if (func instanceof PyOp) {
-                    isEnoughOperands(3);
+                    PyOp operator = (PyOp) func;
+                    isEnoughOperands(operator.getOperandsCount());
                     double val3 = values.pop();
                     double val2 = values.pop();
                     double val1 = values.pop();
-                    PyOp operator = (PyOp) func;
                     double result = operator.apply(val1, val2, val3);
                     values.push(result);
                 }
